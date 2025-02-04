@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>Aoc</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <TargetFramework>net9.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\01\01.csproj" />
+      <ProjectReference Include="..\02\02.csproj" />
+      <ProjectReference Include="..\03\03.csproj" />
+      <ProjectReference Include="..\04\04.csproj" />
+      <ProjectReference Include="..\05\05.csproj" />
+      <ProjectReference Include="..\06\06.csproj" />
+      <ProjectReference Include="..\07\07.csproj" />
+      <ProjectReference Include="..\08\08.csproj" />
+      <ProjectReference Include="..\09\09.csproj" />
+      <ProjectReference Include="..\10\10.csproj" />
+      <ProjectReference Include="..\11\11.csproj" />
+      <ProjectReference Include="..\12\12.csproj" />
+      <ProjectReference Include="..\13\13.csproj" />
+      <ProjectReference Include="..\14\14.csproj" />
+      <ProjectReference Include="..\15\15.csproj" />
+      <ProjectReference Include="..\16\16.csproj" />
+      <ProjectReference Include="..\17\17.csproj" />
+      <ProjectReference Include="..\18\18.csproj" />
+      <ProjectReference Include="..\19\19.csproj" />
+      <ProjectReference Include="..\20\20.csproj" />
+      <ProjectReference Include="..\21\21.csproj" />
+      <ProjectReference Include="..\22\22.csproj" />
+      <ProjectReference Include="..\23\23.csproj" />
+      <ProjectReference Include="..\24\24.csproj" />
+      <ProjectReference Include="..\25\25.csproj" />
+    </ItemGroup>
+</Project>
