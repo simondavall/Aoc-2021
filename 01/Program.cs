@@ -5,7 +5,7 @@ namespace _01;
 internal static class Program
 {
     private const long ExpectedPartOne = 1446;
-    private const long ExpectedPartTwo = 0;
+    private const long ExpectedPartTwo = 1486;
     private const string Day = "_01";
 
     public static int Main(string[] args)
