@@ -43,6 +43,17 @@ public static class Helper
 
         return intArray;
     }
+    
+    public static int[] ToIntArray(this Span<string> array)
+    {
+        var intArray = new int[array.Length];
+        for (var i = 0; i < array.Length; i++)
+        {
+            intArray[i] = array[i].ToInt();
+        }
+
+        return intArray;
+    }
 
     public static long[] ToLongArray(this string[] array)
     {
