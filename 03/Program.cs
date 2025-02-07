@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 
 namespace _03;
 
@@ -26,6 +27,8 @@ internal static class Program
 
     private static long PartOne(string[] input)
     {
+        var stopwatch = Stopwatch.StartNew();
+        
         var digits = new int[input[0].Length];
         foreach (var line in input)
             for (var i = 0; i < input[0].Length; i++)
@@ -42,14 +45,23 @@ internal static class Program
             
             factor *= 2;
         }
+        
+        stopwatch.Stop();
+        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds / 100}");
+        
         return gamma * epsilon;
     }
 
     private static long PartTwo(string[] input)
     {
+        var stopwatch = Stopwatch.StartNew();
+        
         var oxy = GetRating(input.ToArray(), Criteria.Max);
         var co2 = GetRating(input.ToArray(), Criteria.Min);
 
+        stopwatch.Stop();
+        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds / 100}");
+        
         return oxy * co2;
     }
 
