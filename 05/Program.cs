@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Diagnostics;
+using System.Runtime.InteropServices;
 using AocHelper;
 
 namespace _05;
@@ -38,6 +39,8 @@ internal static class Program
     private static readonly Dictionary<(int, int), int> HydroThermals = [];
     private static long PartOne(List<(int x1, int y1, int x2, int y2)> ranges)
     {
+        var stopwatch = Stopwatch.StartNew();
+
         foreach (var (x1, y1, x2, y2) in ranges)
         {
             if (x1 != x2 && y1 != y2)
@@ -48,11 +51,16 @@ internal static class Program
                     HydroThermals.AddOrIncrement((i, j));
         }
         
+        stopwatch.Stop();
+        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds / 100}");
+        
         return HydroThermals.Count(x => x.Value > 1);
     }
     
     private static long PartTwo(List<(int x1, int y1, int x2, int y2)> ranges)
     {
+        var stopwatch = Stopwatch.StartNew();
+
         foreach (var (x1, y1, x2, y2) in ranges)
         {
             if (x1 == x2 || y1 == y2)
@@ -74,6 +82,9 @@ internal static class Program
             }
         }
 
+        stopwatch.Stop();
+        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds / 100}");
+        
         return HydroThermals.Count(x => x.Value > 1);
     }
 
