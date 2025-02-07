@@ -31,9 +31,8 @@ internal static class Aoc
             
             Console.WriteLine(current != 0 ? "Oops, Failed!!!" : "Success");
             result += current;
+            Console.WriteLine();
         }
-
-        Console.WriteLine();
         
         stopwatch.Stop();
         Console.WriteLine($"All solutions ran in (ms): {stopwatch.ElapsedMilliseconds}");
