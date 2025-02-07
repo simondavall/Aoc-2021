@@ -1,4 +1,5 @@
-﻿using AocHelper;
+﻿using System.Diagnostics;
+using AocHelper;
 namespace _02;
 
 internal static class Program
@@ -35,6 +36,8 @@ internal static class Program
 
     private static long PartOne(ReadOnlySpan<(string dir, int multiplier)> course)
     {
+        var stopwatch = Stopwatch.StartNew();
+        
         (int x, int y) position = (0, 0);
         foreach (var instruction in course){
             var (dx, dy) = Directions[instruction.dir];
@@ -42,11 +45,16 @@ internal static class Program
             position.y += dy * instruction.multiplier;
         }
 
+        stopwatch.Stop();
+        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds / 100}");
+        
         return position.x * position.y;
     }
     
     private static long PartTwo(ReadOnlySpan<(string dir, int multiplier)> course)
     {
+        var stopwatch = Stopwatch.StartNew();
+        
         (int x, int y) position = (0, 0);
         var aim = 0;
         foreach (var instruction in course){
@@ -60,6 +68,9 @@ internal static class Program
             }
         }
 
+        stopwatch.Stop();
+        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds / 100}");
+        
         return position.x * position.y;
     }
 }
