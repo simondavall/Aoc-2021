@@ -1,4 +1,5 @@
-﻿using AocHelper;
+﻿using System.Diagnostics;
+using AocHelper;
 namespace _01;
 
 internal static class Program
@@ -25,18 +26,25 @@ internal static class Program
 
     private static long PartOne(int[] depths)
     {
+        var stopwatch = Stopwatch.StartNew();
+        
         long tally = 0;
         for (var i = 0; i < depths.Length - 1; i++)
         {
           if (depths[i] < depths[i+1])
             tally++;
         }
+        
+        stopwatch.Stop();
+        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds/100}");
 
         return tally;
     }
     
     private static long PartTwo(int[] depths)
     {
+        var stopwatch = Stopwatch.StartNew();
+        
         long tally = 0;
         for (var i = 0; i < depths.Length - 3; i++)
         {
@@ -45,7 +53,10 @@ internal static class Program
             if (first < second)
                 tally++;
         }
-
+        
+        stopwatch.Stop();
+        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds/100}");
+        
         return tally;
     }
 }
