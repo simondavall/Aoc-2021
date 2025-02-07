@@ -1,4 +1,5 @@
-﻿using AocHelper;
+﻿using System.Diagnostics;
+using AocHelper;
 
 namespace _04;
 
@@ -30,6 +31,8 @@ internal static class Program
 
     private static long PartOne(List<CardItem[][]> boards, int[] numbers)
     {
+        var stopwatch = Stopwatch.StartNew();
+
         var index = 0;
 
         while (index < numbers.Length)
@@ -46,14 +49,22 @@ internal static class Program
             foreach (var cardItem in boards[winnerId[0]].SelectMany(x => x).Where(x => !x.Seen))
                 unseenTotal += cardItem.Number;
             
+            stopwatch.Stop();
+            Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds / 100}");
+            
             return unseenTotal * current;
         }
+        
+        stopwatch.Stop();
+        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds / 100}");
         
         return -1;
     }
 
     private static long PartTwo(List<CardItem[][]> boards, int[] numbers)
     {
+        var stopwatch = Stopwatch.StartNew();
+
         CardItem[][] lastWinner = null!;
         var index = 0;
 
@@ -80,8 +91,14 @@ internal static class Program
             foreach (var cardItem in lastWinner.SelectMany(x => x).Where(x => !x.Seen))
                 unseenTotal += cardItem.Number;
             
+            stopwatch.Stop();
+            Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds / 100}");
+            
             return unseenTotal * current;
         }
+        
+        stopwatch.Stop();
+        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds / 100}");
         
         return -1;
     }
