@@ -6,7 +6,7 @@ namespace _09;
 internal static class Program
 {
     private const long ExpectedPartOne = 631;
-    private const long ExpectedPartTwo = 0;
+    private const long ExpectedPartTwo = 821560;
     private const string Day = "_09";
 
     private static readonly (int dr, int dc)[] Directions = [(-1, 0), (0, 1), (1, 0), (0, -1)];
