@@ -53,7 +53,7 @@ internal static partial class Program
         }
         
         stopwatch.Stop();
-        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds / 100}");
+        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Ticks / 10_000}");
 
         return tally;
     }
@@ -197,7 +197,7 @@ internal static partial class Program
         }
         
         stopwatch.Stop();
-        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Microseconds / 100}");
+        Console.WriteLine($"Time elapsed (ms): {(double)stopwatch.Elapsed.Ticks / 10_000}");
 
         return tally;
     }
