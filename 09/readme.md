@@ -1,8 +1,8 @@
-# Day 7: The Treachery of Whales #
-https://adventofcode.com/2021/day/7
+# Day 9: Smoke Basin #
+https://adventofcode.com/2021/day/9
 
-Time elapsed (ms): 5.19\
-Day_07 Part 1: 344605
+Time elapsed (ms): 0.8281\
+Day_09 Part 1: 631
 
-Time elapsed (ms): 3.62\
-Day_07 Part 2: 93699985
+Time elapsed (ms): 8.3987\
+Day_09 Part 2: 821560
