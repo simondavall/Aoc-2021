@@ -229,30 +229,28 @@ internal static class Program
 
         return node;
     }
-    
+
     private static void PrintTree(Node[] nodes)
     {
-        if (nodes.Length == 0)
-            return;
-
-        List<Node> nextLevel = [];
-
-        foreach (var node in nodes)
+        while (true)
         {
-            if (node.Value == -1)
-                Console.Write("  *  ");
-            else
-                Console.Write($" {node.Value} ");
-            
-            if (node.Left is not NullNode)
-                nextLevel.Add(node.Left);
-            if (node.Right is not NullNode)
-                nextLevel.Add(node.Right);
+            if (nodes.Length == 0) return;
+
+            List<Node> nextLevel = [];
+
+            foreach (var node in nodes)
+            {
+                Console.Write(node.Value == -1 ? "  *  " : $" {node.Value} ");
+
+                if (node.Left is not NullNode) nextLevel.Add(node.Left);
+                if (node.Right is not NullNode) nextLevel.Add(node.Right);
+            }
+
+            Console.WriteLine();
+            nodes = nextLevel.ToArray();
         }
-        Console.WriteLine();
-        PrintTree(nextLevel.ToArray());
     }
-    
+
     private class Node
     {
         public Node Left { get; set; } = _nullNode;
@@ -266,8 +264,7 @@ internal static class Program
         if (node is NullNode)
             return node;
 
-        if (parent is null)
-            parent = _nullNode;
+        parent ??= _nullNode;
         
         var clone = new Node { Left = _nullNode, Right = _nullNode, Parent = parent, Value = node.Value };
         clone.Left = Clone(node.Left, clone);
