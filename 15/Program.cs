@@ -5,7 +5,7 @@ namespace _15;
 internal static class Program
 {
     private const long ExpectedPartOne = 769;
-    private const long ExpectedPartTwo = 0;
+    private const long ExpectedPartTwo = 2963;
     private const string Day = "_15";
 
     private static int _mapHeight;
